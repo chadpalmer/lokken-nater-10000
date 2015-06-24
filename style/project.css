@@ -1,0 +1,50 @@
+body {
+    color: #000;
+    font-family: arial, helvetica, sans serif;
+}
+p {
+    line-height: 1em;
+}
+form{
+    margin-top: -12px;
+}
+textarea {
+    display: block;
+    height: 10em;
+    margin-bottom: 10px;
+    width: 75%
+}
+.head {
+    font-size: 30px;
+    font-weight: bold;
+}
+.version {
+    color: #aaa;
+    font-size: 14px;
+}
+.form-box {
+    background: #bfd4e6;
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 10px;
+}
+.law-label {
+    font-size: 20px;
+    font-weight: bold;
+}
+.command {
+    color: #aa0000;
+    font-size: 14px;
+}
+.generate {
+    background: #0354a3;
+    border: #fff solid 2px;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 30px;
+    padding: 5px;
+    text-transform: uppercase;
+}
