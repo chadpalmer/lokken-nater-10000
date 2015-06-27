@@ -1,7 +1,9 @@
-function init() {
+objLokken = objLokken || {}
 
-}
+objLokken.init = function() {
 
-function renderQuote() {
+};
 
-}
+objLokken.renderQuote = function() {
+
+};
