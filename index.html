@@ -9,12 +9,26 @@
     <script type="text/javascript" src="js/js.js"></script>
     <script type="text/javascript" src="js/data.js"></script>
 </head>
-<body>
+<body onload="objLokken.init();">
 <div class="head">The Lokken-nator 10000, <span class="version">version 1.0</span></div>
-<div class="form-box"><p class="law-label">There ought to be a law for...<br/><span class="command">(Please enter desired law below)</span></p>
-<form>
-    <textarea id="law_entry" name="law_entry"></textarea>
-    <input id="check_law" name="check_law" type="button" value="Lokken test your law baby!" class="generate" onclick="renderQuote();" />
-</form></div>
+<div class="form-box"><p class="law-label">There ought to be a law for...<br/><span class="command">(Please enter desired law below)</span>
+</p>
+
+    <form>
+        <textarea id="law_entry" name="law_entry"></textarea>
+        <input id="check_law" name="check_law" type="button" value="Lokken test your law baby!" class="generate" onclick="objLokken.renderQuote();"/>
+    </form>
+    <div id="quote_box">
+        <div class="photo-box"><img id="photo" src="images/mike.jpg" height="250" width="250"/></div>
+        <div id="quote_text">I weep for the liberty of my country when I see at this early day of its successful
+            experiment that corruption has been imputed to many members of the House of Representatives, and the rights
+            of the people have been bartered for promises of office. <br/><span id="credit">Thomas Jefferson</span>
+        </div>
+    </div>
+</div>
+<audio id="quote">
+    <source id="mp3" src="http://www.gannett-cdn.com/experiments/usatoday/2015/05/spelling-bee/media/audio/appoggiatura-definition.mp3" type="audio/mpeg"/>
+    <source id="ogg" src="http://www.gannett-cdn.com/experiments/usatoday/2015/05/spelling-bee/media/audio/appoggiatura-definition.ogg" type="audio/ogg"/>
+</audio>
 </body>
 </html>
