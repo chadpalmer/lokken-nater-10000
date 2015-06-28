@@ -1,6 +1,7 @@
 var objLokken = objLokken || {};
 
 objLokken.currentQuote = 0;
+objLokken.maxQuotes = 8;
 
 objLokken.init = function () {
     objLokken.data = data;
@@ -12,6 +13,8 @@ objLokken.init = function () {
     objLokken.text = document.getElementById("quote_text");
     objLokken.quoteBox = document.getElementById("quote_box");
     objLokken.lawBox = document.getElementById("law_entry");
+    objLokken.lokkenButton = document.getElementById("check_law");
+    objLokken.speaker = document.getElementById("speaker_name");
 
     objLokken.audio.addEventListener("ended", function () {
         setTimeout(function () {
@@ -21,8 +24,10 @@ objLokken.init = function () {
 };
 
 objLokken.renderQuote = function () {
+    objLokken.lokkenButton.disabled = true;
     if (objLokken.lawBox.value != "") {
         objLokken.photo.src = "images/" + objLokken.data.family[objLokken.currentQuote].photo;
+        objLokken.speaker.innerHTML = objLokken.data.family[objLokken.currentQuote].name + " Lokken";
         objLokken.mp3.src = "audio/" + objLokken.data.family[objLokken.currentQuote].name.toLowerCase() + ".mp3";
         objLokken.ogg.src = "audio/" + objLokken.data.family[objLokken.currentQuote].name.toLowerCase() + ".ogg";
         objLokken.audio.load();
@@ -31,8 +36,12 @@ objLokken.renderQuote = function () {
             objLokken.fade(true, 0)
         }, 100);
         objLokken.currentQuote = objLokken.currentQuote + 1;
+        if (objLokken.currentQuote >= objLokken.maxQuotes) {
+            objLokken.currentQuote = 0;
+        }
     } else {
         objLokken.photo.src = "images/" + objLokken.data.cool_friend.photo;
+        objLokken.speaker.innerHTML = objLokken.data.cool_friend.name + " Palmer";
         objLokken.mp3.src = "audio/" + objLokken.data.cool_friend.name.toLowerCase() + ".mp3";
         objLokken.ogg.src = "audio/" + objLokken.data.cool_friend.name.toLowerCase() + ".ogg";
         objLokken.audio.load();
@@ -40,7 +49,6 @@ objLokken.renderQuote = function () {
         setTimeout(function () {
             objLokken.fade(true, 0)
         }, 100);
-        objLokken.currentQuote = objLokken.currentQuote + 1;
     }
 
 };
@@ -65,6 +73,8 @@ objLokken.fade = function (blnFadeIn, numStart) {
             setTimeout(function () {
                 objLokken.fade(false, numStart)
             }, 100);
+        } else {
+            objLokken.lokkenButton.disabled = false;
         }
     }
 };

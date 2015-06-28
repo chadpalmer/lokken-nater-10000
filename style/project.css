@@ -57,6 +57,7 @@ textarea {
 .photo-box {
     display: table-cell;
     height: 250px;
+    position: relative;
     width: 250px;
 }
 #quote_text {
@@ -69,5 +70,15 @@ textarea {
 #credit {
     color: #777;
     font-size: 12px;
+    text-transform: uppercase;
+}
+#speaker_name {
+    background: #aa0000;
+    bottom: 4px;
+    color: #fff;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 3px;
+    position: absolute;
     text-transform: uppercase;
 }
