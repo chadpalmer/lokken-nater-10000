@@ -32,9 +32,7 @@ objLokken.renderQuote = function () {
         objLokken.ogg.src = "audio/" + objLokken.data.family[objLokken.currentQuote].name.toLowerCase() + ".ogg";
         objLokken.audio.load();
         objLokken.text.innerHTML = objLokken.data.family[objLokken.currentQuote].quote + "<br/><span id=\"credit\">" + objLokken.data.family[objLokken.currentQuote].credit + "</span>";
-        setTimeout(function () {
-            objLokken.fade(true, 0)
-        }, 100);
+        
         objLokken.currentQuote = objLokken.currentQuote + 1;
         if (objLokken.currentQuote >= objLokken.maxQuotes) {
             objLokken.currentQuote = 0;
@@ -46,10 +44,11 @@ objLokken.renderQuote = function () {
         objLokken.ogg.src = "audio/" + objLokken.data.cool_friend.name.toLowerCase() + ".ogg";
         objLokken.audio.load();
         objLokken.text.innerHTML = objLokken.data.cool_friend.quote + "<br/><span id=\"credit\">" + objLokken.data.cool_friend.credit + "</span>";
-        setTimeout(function () {
+        
+    }
+		setTimeout(function () {
             objLokken.fade(true, 0)
         }, 100);
-    }
 
 };
 
